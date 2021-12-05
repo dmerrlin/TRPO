@@ -8,14 +8,14 @@ public class Main {
         System.out.println("Исходная матрица:");
         double[][] A = generate(4,5);
         printSystem(A);
-       // LU res = new LU(A);
+        LU res = new LU(A);
         Gauss gauss = new Gauss(A);
-       // System.out.println("L матрица:");
-      //  printSystem(res.getL());
-      //  System.out.println("U матрица:");
-       // printSystem(res.getU());
-       // System.out.println("Решение СЛАУ методом LU-разложение");
-       // printVector(res.getX());
+        System.out.println("L матрица:");
+        printSystem(res.getL());
+        System.out.println("U матрица:");
+        printSystem(res.getU());
+        System.out.println("Решение СЛАУ методом LU-разложение");
+        printVector(res.getX());
         System.out.println();
         System.out.println("Решение СЛАУ методом Гаусса");
         printVector(gauss.getX());
@@ -39,7 +39,7 @@ public class Main {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size1; j++) {
                 Random random = new Random();
-                fillerMatrix[i][j] = (double) (random.nextInt() % 50) + 1;
+                fillerMatrix[i][j] = (double) (random.nextInt() % 55) + 1;
             }
         }
         return fillerMatrix;
